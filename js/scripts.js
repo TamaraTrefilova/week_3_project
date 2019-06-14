@@ -28,42 +28,58 @@ var splitInToDigits = function(number) {
     number = parseInt(number / 10);
   }
   array.reverse();
-  alert("Here is array" +array);
   return array;
 }
+
+var convertSmallNumber = function(number) {
+  var result = [];
+  for (var i = 0; i <= number; i++) {
+    if (i > 0 && i < 4) {
+      result.push(checkNumber(i) + " ");
+    } else {
+      result.push(i + " ");
+    }
+  }
+  return result;
+}
+var convertLargeNumber = function(array) {
+  var result = [];
+  var max = 0;
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] === 1 || array[i] === 2 || array[i] === 3) {
+      if (max < array[i]) {
+        max = array[i];
+      }
+    }
+  }
+  if (max != 0) {
+    result.push(checkNumber(max));
+  } else {
+    result = array;
+  }
+  return result;
+}
+
+
 
 $(function() {
   $("#inputForm").submit(function(event) {
     event.preventDefault();
 
     var inputString = $("#userInput").val();
-    inputNum = parseInt(inputString);
-    var arrayOfDigits = splitInToDigits(inputNum);
-    alert("input as a number: " + inputNum);
-    // arrayNum = inputString.split();
-    // alert(arrayNum);
-    debugger;
-    if (arrayOfDigits.length == 1) {
-      for (var i = 0; i <= inputNum; i++) {
-        if (i > 0 && i < 4) {
-          result.push(checkNumber(i) + ", ");
-        } else {
-          result.push(i + ", ");
-        }
-      }
+    // debugger;
+    $("#inputForm")[0].reset();
+    if (inputString === "") {
+      result = "Please enter a valid number!";
     } else {
-      var max = 0;
-      for (var i = 0; i < arrayOfDigits.length; i++) {
-
-        if(arrayOfDigits[i]===1 || arrayOfDigits[i]===2 ||arrayOfDigits[i]===2 ){
-          if(max < )
-          max = arrayOfDigits[i];
-        }
-          arrayOfDigits[i]
+      inputNum = parseInt(inputString);
+      var arrayOfDigits = splitInToDigits(inputNum);
+      if (arrayOfDigits.length == 1) {
+        result = convertSmallNumber(arrayOfDigits);
+      } else {
+        result = convertLargeNumber(arrayOfDigits);
       }
-
     }
-    result = result.join(" ");
     $("#stringResult").text(result);
     $("#output").show();
   });
