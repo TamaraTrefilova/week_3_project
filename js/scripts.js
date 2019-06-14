@@ -57,7 +57,7 @@ var convertLargeNumber = function(array) {
   } else {
     result = array;
   }
-  return result;
+  return result.join("");
 }
 
 
@@ -85,7 +85,13 @@ $(function() {
       }
 
     }
-    $("#stringResult").text(result);
+    if (isset($_POST['submit_button'])) {
+      $("#stringResult").text(result);
+
+    } else if (isset($_POST['reverse_button'])) {
+        $("#stringResult").text(result.reverse());
+    }
+    // $("#stringResult").text(result);
     $(".modal").show();
     $("button.close").click(function() {
       $("#myModal").hide("hide");
