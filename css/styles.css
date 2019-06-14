@@ -1,5 +1,12 @@
 h1{
   text-align: center;
   color: blue;
+}
 
+.btn_submit{
+  margin: auto;
+}
+
+#output{
+  display: none;
 }
