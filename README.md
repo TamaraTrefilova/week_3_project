@@ -52,7 +52,7 @@ There are no issues.
 ## Support and contact details
 
 tamara.trefilova@gmail.com
-## GitHub pages :
+## GitHub pages : https://tamaratrefilova.github.io/week_3_project/
 
 ## Technologies Used
 
