@@ -30,7 +30,11 @@ label{
 }
 
 body, html {
-  height: 100%;
+  min-height: 100%
+}
+
+@media #{$small-only} {
+ background-position: center;
 }
 
 .bg {
@@ -40,4 +44,5 @@ body, html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
 }
