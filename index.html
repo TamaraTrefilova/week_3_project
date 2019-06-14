@@ -1,31 +1,59 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-   <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <script src="js/jquery-3.4.1.js"></script>
-    <script src="js/scripts.js"></script>
-    <title>Beep Boop</title>
-  </head>
-  <body>
-  <div class="container">
-    <h1>Beep Boop</h1>
-    <form id="inputForm">
-      <div class="form-group">
-        <label for="userInput">Enter your number here:</label>
-        <input type="number" class="form-control" id="userInput">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-3.4.1.js"></script>
+  <script src="js/scripts.js"></script>
+  <title>Beep Boop</title>
+</head>
+
+<body>
+  <div class="bg">
+    <div class="container">
+      <div style="background:transparent !important" class="jumbotron">
+          Beep Boop
       </div>
 
-      <div class="btn_submit">
-        <button type="Submit" name="button">Submit</button>
-      </div>
-      <div id="output">
-        <p>Here is your result:</p> <br>
-        <p> <span id="stringResult"></span> </p>
-      </div>
-    </form>
+      <form id="inputForm">
+        <div class="form-group">
+          <label for="userInput">Enter your number here:</label>
+          <input type="number" class="form-control" id="userInput">
+        </div>
+
+        <div class="btn_submit">
+          <button type="Submit" name="button">Submit</button>
+        </div>
+        <!-- <div id="output">
+          <p>Here is your result:</p> <br>
+          <p> <span id="stringResult"></span> </p>
+        </div> -->
+        <div id="myModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Here is a result!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="result">
+                  <p> <span id="stringResult"></span> </p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
-  </body>
+
+</body>
+
 </html>

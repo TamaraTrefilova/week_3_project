@@ -73,7 +73,7 @@ $(function() {
       result = "It looks like you didn't enter anything. Please enter a valid number!";
     } else {
       inputNum = parseInt(inputString);
-      if(inputNum<=0){
+      if (inputNum <= 0) {
         result = "It looks like you entered either '0' or negative number. Please enter a valid number!";
       } else {
         var arrayOfDigits = splitInToDigits(inputNum);
@@ -86,7 +86,13 @@ $(function() {
 
     }
     $("#stringResult").text(result);
-    $("#output").show();
+    $(".modal").show();
+    $("button.close").click(function() {
+      $("#myModal").hide("hide");
+    });
+    $("button.btn-secondary").click(function() {
+      $("#myModal").hide("hide");
+    });
   });
 
 
