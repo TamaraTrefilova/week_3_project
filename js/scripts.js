@@ -21,30 +21,52 @@ var checkNumber = function(number) {
   return value;
 }
 
+var splitInToDigits = function(number) {
+  var array = [];
+  while (number > 0) {
+    array[array.length] = number % 10;
+    number = parseInt(number / 10);
+  }
+  array.reverse();
+  alert("Here is array" +array);
+  return array;
+}
+
 $(function() {
   $("#inputForm").submit(function(event) {
     event.preventDefault();
 
     var inputString = $("#userInput").val();
     inputNum = parseInt(inputString);
+    var arrayOfDigits = splitInToDigits(inputNum);
     alert("input as a number: " + inputNum);
-    arrayNum = inputString.split();
-    alert(arrayNum);
-    var arrayLength = arrayNum.length;
-    // debugger;
-    if (arrayLength == 1) {
+    // arrayNum = inputString.split();
+    // alert(arrayNum);
+    debugger;
+    if (arrayOfDigits.length == 1) {
       for (var i = 0; i <= inputNum; i++) {
         if (i > 0 && i < 4) {
-          result.push(checkNumber(i));
+          result.push(checkNumber(i) + ", ");
         } else {
-          result.push(""+i);
+          result.push(i + ", ");
         }
       }
+    } else {
+      var max = 0;
+      for (var i = 0; i < arrayOfDigits.length; i++) {
+
+        if(arrayOfDigits[i]===1 || arrayOfDigits[i]===2 ||arrayOfDigits[i]===2 ){
+          if(max < )
+          max = arrayOfDigits[i];
+        }
+          arrayOfDigits[i]
+      }
+
     }
-    alert("Result: " + result);
+    result = result.join(" ");
+    $("#stringResult").text(result);
+    $("#output").show();
   });
 
-  result = result.join(" ");
-  $("#stringResult").text(result);
-  $("#output").show();
+
 });

@@ -30,6 +30,7 @@
 | * These exceptions are written from least to most important. The first exception should apply unless the second exception does, and the same with the second and third.     | 13    | "I'm sorry, Dave. I'm afraid I can't do that."      |
 | * These exceptions are written from least to most important. The first exception should apply unless the second exception does, and the same with the second and third.    | 21   | "Boop"      |
 | * These exceptions are written from least to most important. The first exception should apply unless the second exception does, and the same with the second and third.    | 31       |"I'm sorry, Dave. I'm afraid I can't do that." |
+ | * If any of digits of the number are equal to 1,2,3, print the naumber as it is    | 40       |40 |
 
 
 ## Setup/Installation Requirements
