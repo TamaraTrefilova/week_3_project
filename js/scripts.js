@@ -70,15 +70,20 @@ $(function() {
     // debugger;
     $("#inputForm")[0].reset();
     if (inputString === "") {
-      result = "Please enter a valid number!";
+      result = "It looks like you didn't enter anything. Please enter a valid number!";
     } else {
       inputNum = parseInt(inputString);
-      var arrayOfDigits = splitInToDigits(inputNum);
-      if (arrayOfDigits.length == 1) {
-        result = convertSmallNumber(arrayOfDigits);
+      if(inputNum<=0){
+        result = "It looks like you entered either '0' or negative number. Please enter a valid number!";
       } else {
-        result = convertLargeNumber(arrayOfDigits);
+        var arrayOfDigits = splitInToDigits(inputNum);
+        if (arrayOfDigits.length == 1) {
+          result = convertSmallNumber(arrayOfDigits);
+        } else {
+          result = convertLargeNumber(arrayOfDigits);
+        }
       }
+
     }
     $("#stringResult").text(result);
     $("#output").show();

@@ -23,6 +23,9 @@
 
 | Behaviors       | Input           | Output      |
 | ------------- |:-----------------:| -----------:|
+| * User should get a notification if entered value is not a numeric value   | "asd"  | "It looks like you didn't enter anything. Please enter a valid number!"  |
+| * User should get a notification if entered value is negative   | -1   | "It looks like you entered either '0' or negative number. Please enter a valid number!"   |
+| * User should get a notification if entered value is '0'  | 0   | "It looks like you entered either '0' or negative number. Please enter a valid number!"   |
 | * The program returns a range of numbers from 0 to the users inputted number   | 4    | "0, 1, 2, 3, 4"    |
 | * Numbers that contain a 1: all digits are replaced (all digits) with "Beep!"    | 1     | "0", "Beep!"    |
 | * Numbers that contain a 2: all digits are replaced (all digits) with "Boop!"     | 2  | "0", "Beep!", "Boop"   |
@@ -30,7 +33,7 @@
 | * These exceptions are written from least to most important. The first exception should apply unless the second exception does, and the same with the second and third.     | 13    | "I'm sorry, Dave. I'm afraid I can't do that."      |
 | * These exceptions are written from least to most important. The first exception should apply unless the second exception does, and the same with the second and third.    | 21   | "Boop"      |
 | * These exceptions are written from least to most important. The first exception should apply unless the second exception does, and the same with the second and third.    | 31       |"I'm sorry, Dave. I'm afraid I can't do that." |
- | * If any of digits of the number are equal to 1,2,3, print the naumber as it is    | 40       |40 |
+ | * If any of digits of the number are not equal to 1,2,3, print the number as it is    | 40       |40 |
 
 
 ## Setup/Installation Requirements
