@@ -85,13 +85,8 @@ $(function() {
       }
 
     }
-    if (isset($_POST['submit_button'])) {
-      $("#stringResult").text(result);
 
-    } else if (isset($_POST['reverse_button'])) {
-        $("#stringResult").text(result.reverse());
-    }
-    // $("#stringResult").text(result);
+    $("#stringResult").text(result);
     $(".modal").show();
     $("button.close").click(function() {
       $("#myModal").hide("hide");
