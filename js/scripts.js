@@ -55,7 +55,8 @@ var convertLargeNumber = function(array) {
   if (max != 0) {
     result.push(checkNumber(max));
   } else {
-    result = array;
+    // result.push(array);
+    return array.join('');
   }
   return result.join("");
 }
