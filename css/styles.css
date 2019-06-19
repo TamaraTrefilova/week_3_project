@@ -40,3 +40,10 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.result{
+  display:none;
+  background-color: white;
+}
+.hide{
+  display: none;
+}

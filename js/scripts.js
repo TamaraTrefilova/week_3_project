@@ -16,7 +16,7 @@ var checkNumber = function(number) {
       value = "I'm sorry, Dave. I'm afraid I can't do that.";
       break;
     default:
-      value = "Enter a valid number";
+      value += "" + number;
   }
   return value;
 }
@@ -31,17 +31,6 @@ var splitInToDigits = function(number) {
   return array;
 }
 
-var convertSmallNumber = function(number) {
-  var result = [];
-  for (var i = 0; i <= number; i++) {
-    if (i > 0 && i < 4) {
-      result.push(checkNumber(i) + " ");
-    } else {
-      result.push(i + " ");
-    }
-  }
-  return result;
-}
 var convertLargeNumber = function(array) {
   var result = [];
   var max = 0;
@@ -62,40 +51,36 @@ var convertLargeNumber = function(array) {
 }
 
 
+    $(function() {
+      $("#inputForm").submit(function(event) {
+        event.preventDefault();
 
-$(function() {
-  $("#inputForm").submit(function(event) {
-    event.preventDefault();
-
-    var inputString = $("#userInput").val();
-    // debugger;
-    $("#inputForm")[0].reset();
-    if (inputString === "") {
-      result = "It looks like you didn't enter anything. Please enter a valid number!";
-    } else {
-      inputNum = parseInt(inputString);
-      if (inputNum <= 0) {
-        result = "It looks like you entered either '0' or negative number. Please enter a valid number!";
-      } else {
-        var arrayOfDigits = splitInToDigits(inputNum);
-        if (arrayOfDigits.length == 1) {
-          result = convertSmallNumber(arrayOfDigits);
+        var inputString = $("#userInput").val();
+        // debugger;
+        var result = ["0"];
+        $("#inputForm")[0].reset();
+        if (inputString === "") {
+          result = "It looks like you didn't enter anything. Please enter a valid number!";
         } else {
-          result = convertLargeNumber(arrayOfDigits);
+          inputNum = parseInt(inputString);
+          if (inputNum <= 0) {
+            result = "It looks like you entered either '0' or negative number. Please enter a valid number!";
+          } else {
+            for (var i = 1; i <= inputNum; i++) {
+              // debugger;
+              var digitsArray = splitInToDigits(i);
+                var num = convertLargeNumber(digitsArray);
+                result.push(num);
+            }          // result = result.split("");
+          }
+
         }
-      }
+        $("#stringResult").text(result);
+        $(".result").show();
+        $("#close_btn").click(function() {
+          $(".result").hide("hide");
+        });
+      });
 
-    }
 
-    $("#stringResult").text(result);
-    $(".modal").show();
-    $("button.close").click(function() {
-      $("#myModal").hide("hide");
     });
-    $("button.btn-secondary").click(function() {
-      $("#myModal").hide("hide");
-    });
-  });
-
-
-});

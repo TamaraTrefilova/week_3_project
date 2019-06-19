@@ -26,14 +26,11 @@
 | * User should get a notification if entered value is not a numeric value   | "asd"  | "It looks like you didn't enter anything. Please enter a valid number!"  |
 | * User should get a notification if entered value is negative   | -1   | "It looks like you entered either '0' or negative number. Please enter a valid number!"   |
 | * User should get a notification if entered value is '0'  | 0   | "It looks like you entered either '0' or negative number. Please enter a valid number!"   |
-| * The program returns a range of numbers from 0 to the users inputted number   | 4    | "0, 1, 2, 3, 4"    |
-| * Numbers that contain a 1: all digits are replaced (all digits) with "Beep!"    | 1     | "0", "Beep!"    |
-| * Numbers that contain a 2: all digits are replaced (all digits) with "Boop!"     | 2  | "0", "Beep!", "Boop"   |
-| * Numbers that contain a 3: all digits are replaced (all digits) with "I'm sorry, Dave. I'm afraid I can't do that."     | 3   | "0", "Beep!", "Boop", "I'm Sorry..."      |
-| * These exceptions are written from least to most important. The first exception should apply unless the second exception does, and the same with the second and third.     | 13    | "I'm sorry, Dave. I'm afraid I can't do that."      |
-| * These exceptions are written from least to most important. The first exception should apply unless the second exception does, and the same with the second and third.    | 21   | "Boop"      |
-| * These exceptions are written from least to most important. The first exception should apply unless the second exception does, and the same with the second and third.    | 31       |"I'm sorry, Dave. I'm afraid I can't do that." |
- | * If any of digits of the number are not equal to 1,2,3, print the number as it is    | 40       |40 |
+| * The program returns a range of numbers from 0 to the users inputted number   | 9    | "0", "Beep!", "Boop","I'm Sorry..." ,5,6,7,8,9     |   |
+| * If number contains 3 , output should be: "I'm sorry, Dave. I'm afraid I can't do that."  | 3 or 13 or 23 or 36    | "I'm sorry, Dave. I'm afraid I can't do that."      |
+| * If number contains 2 , output should be: "Boop"    |2 or 21, 25   | "Boop"      |
+| * If number contains 1 , output should be: "Beep" | 1 or 15 or 17       |"Beep"|
+
 
 
 ## Setup/Installation Requirements
